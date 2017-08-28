@@ -11,7 +11,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
     // the basic dancer doesn't do anything interesting at all on each step,
     // it just schedules the next step
     // console.log('Step');
-    setTimeout(this.step, this.timeBetweenSteps);
+    // setTimeout(this.step, this.timeBetweenSteps);
   };
   // this.step();
   
@@ -38,8 +38,15 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   
   setTimeout(() => {
     this.startStepping();
-    
   }, this.timeBetweenSteps);
 
+  this.lineUp = function(newTop, newLeft) {
+    // this.setPosition(newTop, newLeft);
+    var styleSettings = {
+      top: newTop,
+      left: newLeft
+    };
+    this.$node.animate(styleSettings, Math.random() * 300);
+  };
   // return dancer;
 };

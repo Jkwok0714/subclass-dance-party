@@ -9,8 +9,9 @@ body{
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton{
+.title, .addDancerButton, .lineUpButton {
   padding:5px 12px;
+  font-size: 15px;
   float:right;
 }
 .topbar{
@@ -28,12 +29,18 @@ body, a:link, a:visited, a:active{
 
 .bigger{
   border:15px solid red;
-  border-radius:10px;
+  border-radius:0px;
   position:fixed;
 }
 
 .blue {
   border:10px solid blue;
+  border-radius:10px;
+  position:absolute;
+}
+
+.yellow {
+  border:10px solid yellow;
   border-radius:10px;
   position:absolute;
 }

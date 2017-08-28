@@ -1,5 +1,22 @@
 $(document).ready(function() {
   window.dancers = [];
+  
+  $('.lineUpButton').on('click', function(event) {
+    var totalWidth = $('body').width() / window.dancers.length;
+    for (var i = 0; i < window.dancers.length; i++) {
+      var xPos = totalWidth * i + (totalWidth / 2);
+      window.dancers[i].lineUp($('body').height() / 2, xPos);
+    }
+    
+  });
+  
+  $('.randomizer').on('click', function(event) {
+    for (var i = 0; i < window.dancers.length; i++) {
+      var x = $('body').height() * Math.random();
+      var y = $('body').width() * Math.random();
+      window.dancers[i].lineUp(x, y);
+    }
+  });
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -28,6 +45,7 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
   });
 });
 
