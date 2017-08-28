@@ -25,3 +25,15 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+
+.bigger{
+  border:15px solid red;
+  border-radius:10px;
+  position:fixed;
+}
+
+.blue {
+  border:10px solid blue;
+  border-radius:10px;
+  position:absolute;
+}
