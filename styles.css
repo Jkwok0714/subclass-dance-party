@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-image: url("src/bg.jpg");
+  background-image: url("src/pkmnMap2.jpg");
   background-size: cover;
   font-size: 18px;
 }
@@ -14,7 +14,9 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   font-size: 15px;
   float:right;
+  font-family: verdana;
 }
+
 .topbar{
   height:32px;
   background-color: #555;
@@ -35,14 +37,14 @@ body, a:link, a:visited, a:active{
 
 .RedRing {
   border:3px dotted rgba(255, 185, 103, .5);
-  border-radius:50px;
+  border-radius: 80%;
   transition: border 0.7s;
   position:relative;
 }
 
 .icon {
-  width: 50px;
-  height: 50px;
+  max-width: 70px;
+  max-height: 70px;
   position: absolute;
 }
 
