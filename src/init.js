@@ -6,7 +6,7 @@ $(document).ready(function() {
     var totalWidth = $('body').width() / window.dancers.length;
     for (var i = 0; i < window.dancers.length; i++) {
       var xPos = totalWidth * i + (totalWidth / 2);
-      window.dancers[i].lineUp($('body').height() / 2, xPos);
+      window.dancers[i].lineUp($('body').height() * 0.75, xPos, Math.random() * 500);
     }
     
   });
@@ -15,7 +15,7 @@ $(document).ready(function() {
     for (var i = 0; i < window.dancers.length; i++) {
       var x = $('body').height() * Math.random();
       var y = $('body').width() * Math.random();
-      window.dancers[i].lineUp(x, y);
+      window.dancers[i].lineUp(x, y, Math.random() * 500);
     }
   });
   
@@ -25,13 +25,19 @@ $(document).ready(function() {
     var thisX = object.x;
     var thisY = object.y;
     var closestDistance = 1000000;
+    var closestDancer = null;
     
     for (var i = 0; i < window.dancers.length; i++) {
       var currDistance = Math.sqrt(Math.pow(window.dancers[i].x - thisX, 2) + Math.pow(window.dancers[i].y - thisY, 2));
-      // console.log(currDistance);
+      if (currDistance !== 0 && currDistance < closestDistance) {
+        closestDistance = currDistance;
+        closestDancer = window.dancers[i];
+      }
     }
+    console.log(closestDistance);
     
-    
+    object.lineUp(closestDancer.y, closestDancer.x);
+    closestDancer.lineUp(thisY, thisX);
     // window.dancers[objIndex].lineUp(20, 20);
   });
   

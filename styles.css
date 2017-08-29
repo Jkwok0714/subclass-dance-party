@@ -4,7 +4,7 @@ body, html{
 body{
   margin: 0px;
   background-image: url("src/bg.jpg");
-  background-size: 100%;
+  background-size: cover;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -22,22 +22,28 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
+
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
   position:absolute;
+  transition: opacity 0.5s, border 0.5s;
 }
 
 .bigger{
-  border:15px solid red;
-  border-radius:0px;
+  opacity: 0.5;
   position:fixed;
 }
 
-.blue {
-  border:10px solid blue;
-  border-radius:10px;
-  position:absolute;
+.RedRing {
+  border:3px dotted rgba(255, 185, 103, .5);
+  border-radius:50px;
+  transition: border 0.7s;
+  position:relative;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  position: absolute;
 }
 
 .yellow {

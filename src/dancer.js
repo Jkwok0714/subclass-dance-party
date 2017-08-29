@@ -48,14 +48,14 @@ var makeDancer = function(top, left, timeBetweenSteps, idNum) {
     this.startStepping();
   }, this.timeBetweenSteps);
 
-  this.lineUp = function(newTop, newLeft) {
+  this.lineUp = function(newTop, newLeft, speed = 500) {
     // this.setPosition(newTop, newLeft);
     this.updatePositions(newTop, newLeft);
     var styleSettings = {
       top: newTop,
       left: newLeft
     };
-    this.$node.animate(styleSettings, Math.random() * 300);
+    this.$node.animate(styleSettings, speed);
   };
   // return dancer;
 };
