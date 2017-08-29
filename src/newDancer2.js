@@ -13,7 +13,7 @@ var newDancer2 = function(...args) {
     // toggle() is a jQuery method to show/hide the <span> tag.
     // See http://api.jquery.com/category/effects/ for this and
     // other effects you can use on a jQuery-wrapped html tag.
-    this.$node.toggleClass('yellow');
+    this.$node.toggleClass('yellow'); 
   };
   // return blinkyDancer;
 };

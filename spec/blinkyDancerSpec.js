@@ -32,3 +32,37 @@ describe('blinkyDancer', function() {
     });
   });
 });
+
+describe('newDancer2', function() {
+  var newDancerInstance, clock;
+  var timeBetweenSteps = 100;
+  
+  beforeEach(function() {
+    newDancerInstance = new newDancer2(10, 20, timeBetweenSteps);
+    
+  });
+  
+  it('should have a step function that makes it toggle the yellow class', function() {
+    sinon.spy(newDancerInstance.$node, 'toggleClass');
+    newDancerInstance.step();
+    expect(newDancerInstance.$node.toggleClass.called).to.be.true;
+  });
+  
+});
+
+describe('fadeDancer', function() {
+  var fadeDancerInstance, clock;
+  var timeBetweenSteps = 100;
+  
+  beforeEach(function() {
+    fadeDancerInstance = new makeFadingDancer(10, 20, timeBetweenSteps);
+    
+  });
+  
+  it('should have a step function that makes it bigger', function() {
+    sinon.spy(fadeDancerInstance.$node, 'toggleClass');
+    fadeDancerInstance.step();
+    expect(fadeDancerInstance.$node.toggleClass.called).to.be.true;
+  });
+});
+
