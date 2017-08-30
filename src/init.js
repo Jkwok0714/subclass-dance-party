@@ -68,7 +68,6 @@ $(document).ready(function() {
     
     object.lineUp(closestDancer.y, closestDancer.x);
     closestDancer.lineUp(thisY, thisX);
-    // window.dancers[objIndex].lineUp(20, 20);
   });
   
 
@@ -89,10 +88,7 @@ $(document).ready(function() {
      */
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
 
-    // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
-
-    // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
       $('body').height() * Math.random(),
@@ -102,7 +98,6 @@ $(document).ready(function() {
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
     window.dancerIDs.push(idNum);
-    // console.log(window.dancerIDs);
     idNum++;
   });
 });
